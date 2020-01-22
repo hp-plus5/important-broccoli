@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: static/images
+public_folder: /images
+collections:
+  - name: post
+    label: Posts
+    folder: content/posts
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+      - widget: date
+        name: date
+        label: Date
+        required: true
+      - widget: boolean
+        name: published
+        label: Published
+        required: false
+      - widget: list
+        name: tags
+        label: Tags
+        required: false
+        field:
+          label: String
+          name: string
+          widget: string
+      - widget: boolean
+        name: series
+        label: Series
+        required: false
+      - widget: boolean
+        name: canonical_url
+        label: Canonical URL
+        required: false
+      - widget: image
+        name: cover_image
+        label: Cover Image
+        required: false
+      - widget: text
+        name: description
+        label: Description
+        required: false
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
